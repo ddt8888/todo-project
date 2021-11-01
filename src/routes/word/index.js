@@ -44,7 +44,8 @@ WordRouter.route('/(:word)?').get(async (req, res) => {
                     { r_word: { $regex: `${word}` } },
                     { r_des: { $regex: `${word}` } }
                 ]
-            }).sort({ "_id": -1 }) //-1 = 최신순(내림차순), 1 = 과거순(오름차순) 으로 정렬
+                // }).sort({ "_id": -1 //-1 = 최신순(내림차순), 1 = 과거순(오름차순) 으로 정렬
+            })
         } catch (e) {
             console.log(e)
         }
@@ -104,7 +105,7 @@ WordRouter.route('/(:word)?').get(async (req, res) => {
             //         r_pos: "포스",
             //     }
             // ]
-            // words = await Word.find()
+            words = await Word.find()
         } catch (e) {
             console.log(e)
         }
