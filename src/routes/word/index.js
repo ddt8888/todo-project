@@ -14,10 +14,31 @@ WordRouter.route('/(:word)?').get(async (req, res) => {
         // console.log(queries)
         //데이터베이스에서 쿼리로 단어를 검색
         try {
+            words = [
+                {
+                    r_seq: "1",
+                    r_word: "학원",
+                    r_link: "https//google.com",
+                    r_chi: "한자",
+                    r_des: "학원은 지루하다",
+                    r_pos: "포스",
+                },
+                {
+                    r_seq: "1",
+                    r_word: "학원",
+                    r_link: "https//google.com",
+                    r_chi: "한자",
+                    r_des: "학원은 지루하다",
+                    r_pos: "포스",
+                }
+            ]
             // words = await Word.find({ r_word: { $in: queries } })
-            words = await Word.find({ r_word: { $regex: `^${word}` } }) //데이터베이스에서 검색어로 시작하는 단어를 검색
-            // words = await Word.find({ r_word: { $regex: `{word}$` } }) //데이터베이스에서 검색어로 끝나는 단어를 검색
-            // words = await Word.find({ r_des: { $regex: `${word}`}}) // Word 모델의 r_des 필드에서 쿼리를 포함하는 단어 검색
+            // words = await Word.find({ r_word: { $regex: `^${word}` } }) 
+            //데이터베이스에서 검색어로 시작하는 단어를 검색
+            // words = await Word.find({ r_word: { $regex: `{word}$` } }) 
+            //데이터베이스에서 검색어로 끝나는 단어를 검색
+            // words = await Word.find({ r_des: { $regex: `${word}`}}) 
+            // Word 모델의 r_des 필드에서 쿼리를 포함하는 단어 검색
             //words = await Word.find({
             //    $or: [
             //        { r_word: { $regex: `${word}` } },
@@ -33,7 +54,57 @@ WordRouter.route('/(:word)?').get(async (req, res) => {
         console.log(word)
         // console.log(`word database: ${Word}`)
         try {
-            words = await Word.find()
+            words = [
+                {
+                    r_seq: "1",
+                    r_word: "학원",
+                    r_link: "https//google.com",
+                    r_chi: "한자",
+                    r_des: "학원은 지루하다",
+                    r_pos: "포스",
+                },
+                {
+                    r_seq: "1",
+                    r_word: "학원",
+                    r_link: "https//google.com",
+                    r_chi: "한자",
+                    r_des: "학원은 지루하다",
+                    r_pos: "포스",
+                },
+                {
+                    r_seq: "1",
+                    r_word: "학원",
+                    r_link: "https//google.com",
+                    r_chi: "한자",
+                    r_des: "학원은 지루하다",
+                    r_pos: "포스",
+                },
+                {
+                    r_seq: "1",
+                    r_word: "학원",
+                    r_link: "https//google.com",
+                    r_chi: "한자",
+                    r_des: "학원은 지루하다",
+                    r_pos: "포스",
+                },
+                {
+                    r_seq: "1",
+                    r_word: "학원",
+                    r_link: "https//google.com",
+                    r_chi: "한자",
+                    r_des: "학원은 지루하다",
+                    r_pos: "포스",
+                },
+                {
+                    r_seq: "1",
+                    r_word: "학원",
+                    r_link: "https//google.com",
+                    r_chi: "한자",
+                    r_des: "학원은 지루하다",
+                    r_pos: "포스",
+                }
+            ]
+            // words = await Word.find()
         } catch (e) {
             console.log(e)
         }
