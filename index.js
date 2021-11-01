@@ -15,7 +15,8 @@ app.use(cors(corsOptions)) //cors 설정
 app.use(express.json()) //request body 파싱
 app.use(logger('tiny')) //Logger 설정
 
-const CONNECT_URL = 'mongodb://localhost:27017/kor_dic_db'
+// const CONNECT_URL = 'mongodb://localhost:27017/kor_dic_db'
+const CONNECT_URL = 'mongodb+srv://kimsang:1234@dic-dic-dic.e8im2.mongodb.net/kor_dic_db?retryWrites=true&w=majority'
 mongoose.connect(CONNECT_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
